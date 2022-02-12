@@ -22,6 +22,11 @@
 
         }
 
+        @font-face {
+            font-family: Zector;
+            src: url(/assets/fonts/Zector/Zector.otf);
+        }
+
         html, body {
 
             height: auto;
