@@ -143,7 +143,7 @@
         }
 
         section.main-section { margin-top: 6.8rem; }
-        section.footer-section { margin-top: 6.8rem; }
+        /* section.footer-section { margin-top: 6.8rem; } */
 
         article {
 
