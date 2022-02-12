@@ -1,0 +1,22 @@
+---
+title: Sobre mim
+author: Brendo Costa
+date: 2022-02-12 16:10
+layout: page
+---
+
+## Sobre mim
+
+Nothing here...
+
+## Site's assets
+
+### Template & Stylesheet
+* Brendo Costa
+
+### Fonts
+* Zector by [GGBot](https://ggbot.itch.io/zector-font) -- Licensed under OFL Version 1.1.
+* Quicksand by [Andrew Paglinawan](https://github.com/andrew-paglinawan/QuicksandFamily) -- Licensed under OFL Version 1.1.
+
+### Icons sets
+* Logos by [Gil Barbara](https://github.com/gilbarbara/logos) -- Licensed under Creative Commons Zero v1.0 Universal.

@@ -1,0 +1,10 @@
+---
+title: Início
+author: Brendo Costa
+date: 2020-10-12 13:45
+layout: page
+---
+
+## Home Page
+
+Hey, this is my GitHub's home page, made with Svelte! How it looks? I'm looking forward to put some [random](https://google.com) stuff here, as well use it as a sandbox for my tests.
