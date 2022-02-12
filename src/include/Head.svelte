@@ -219,7 +219,7 @@
 
         .wave {
 
-            height: 10rem;
+            height: 12vw;
             width: 100%;
 
             display: inherit;
