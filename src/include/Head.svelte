@@ -29,12 +29,20 @@
 
         html, body {
 
-            height: auto;
-
             margin: 0;
             padding: 0;
 
             font-size: 1.05vw;
+
+        }
+
+        body {
+
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
         }
 
@@ -129,6 +137,22 @@
 
         a { text-decoration: none; }
 
+        @keyframes fade {
+            0%   { transform: translateY(-5rem); filter: blur(10px); }
+            100% { transform: translateY(0); filter: blur(0); }
+        }
+
+        section.main-section { margin-top: 6.8rem; }
+        section.footer-section { margin-top: 6.8rem; }
+
+        article {
+
+            color: var(--dark-color);
+
+            animation: fade 0.5s ease-in-out;
+
+        }
+
         article h1, h2, h3, article header time, footer h2 {
 
             font-family: "Zector";
@@ -139,21 +163,6 @@
         article a, article a:visited, footer a, footer a:visited {
 
             color: var(--light-color);
-
-        }
-
-        @keyframes fade {
-            0%   { transform: translateY(-5rem); filter: blur(10px); }
-            100% { transform: translateY(0); filter: blur(0); }
-        }
-
-        article {
-
-            margin-top: 6.8rem;
-
-            color: var(--dark-color);
-
-            animation: fade 0.5s ease-in-out;
 
         }
 
