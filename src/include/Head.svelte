@@ -264,6 +264,18 @@
 
     		}
 
+            article header {
+
+                font-size: 1rem;
+
+            }
+
+            article header h1 {
+
+                font-size: 2rem;
+
+            }
+
             article main {
 
                 padding: 1% 5% 1.5% 5%;
