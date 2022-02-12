@@ -59,6 +59,6 @@
     <p>
         Construído com <a title="Svelte" href="https://svelte.dev/"><Icon icon="logos:svelte-icon" inline={true} /></a> e
         hospedado pelo <a title="GitHub" href="https://github.com/BrendoCosta/brendocosta.github.io"><Icon icon="akar-icons:github-fill" color="white" inline={true} /></a>
-        sobre a licença <a href="https://github.com/BrendoCosta/brendocosta.github.io/blob/main/LICENSE">MIT</a>.
+        sob a licença <a href="https://github.com/BrendoCosta/brendocosta.github.io/blob/main/LICENSE">MIT</a>.
     </p>
 </footer>
