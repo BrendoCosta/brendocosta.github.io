@@ -111,7 +111,7 @@
 
         menu nav a::after, menu nav a::before {
 
-            content: '⠀';
+            content: '';
             width: 0;
             height: 0.1rem;
 
@@ -180,16 +180,51 @@
             justify-content: center;
 
             background-color: #f4f4f4;
+            overflow: hidden;
 
         }
 
-        article header h1 {
+        article header img {
 
-            margin: 1rem 0 1rem 0;
+            width: 100%;
 
-            padding: 0 1rem 0 1rem;
+            filter: brightness(0.5) blur(3px);
+
+        }
+
+        article header div {
+
+            position: absolute;
+            text-align: center;
+
+        }
+
+        article header div h1 {
+
+            margin: 0 0 1rem 0;
 
             font-size: 3rem;
+
+        }
+
+        article header div h1 span {
+
+            padding: 0.35rem 0.5rem 0 0.5rem;
+
+            background-color: var(--light-color);
+
+        }
+
+        article header div time {
+
+            font-weight: bold;
+
+        }
+
+        article header div time span {
+
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+
             background-color: var(--light-color);
 
         }
@@ -279,7 +314,14 @@
 
             }
 
-            article header h1 {
+            article header img {
+
+                width: auto;
+                height: 100%;
+
+            }
+
+            article header div h1 {
 
                 font-size: 2rem;
 

@@ -4,6 +4,8 @@
     export let date = undefined;
     export let author = undefined;
     export let layout = undefined;
+    export let image = undefined;
+    export let imageDescription = undefined;
 
     import Head from "./Head.svelte";
     import Navigation from "./Navigation.svelte";
@@ -24,33 +26,23 @@
 
 <Navigation/>
 <section class="main-section">
-    {#if layout === "page"}
-
-        <article>
-            <main>
-                <slot/>
-                <p><i>Atualizado por {author} em {dateString}.</i></p>
-            </main>
-        </article>
-
-    {:else if layout === "post"}
-
-        <article>
-            <header>
-                <h1>{title}</h1>
-                <time datetime="{(new Date(date)).toISOString()}">{dateString}</time>
-            </header>
-            <main>
-                <slot/>
+    <article>
+        <header>
+            {#if image != null}<img src="{image}" alt="{imageDescription}">{/if}
+            <div>
+                <h1><span>{title}</span></h1>
+                {#if layout === "post"}<time datetime="{(new Date(date)).toISOString()}"><span>{dateString}</span></time>{/if}
+            </div>
+        </header>
+        <main>
+            <slot/>
+            {#if layout === "page"}
                 <p><i>Escrito por {author} em {dateString}.</i></p>
-            </main>
-        </article>
-
-    {:else}
-
-    	<p>Template desconhecido.</p>
-
-    {/if}
+            {:else if layout === "post"}
+                <p><i>Escrito por {author} em {dateString}.</i></p>
+            {/if}
+        </main>
+    </article>
 </section>
 <section class="footer-section">
     <svg class="wave" viewBox="0 0 500 150" preserveAspectRatio="none">
