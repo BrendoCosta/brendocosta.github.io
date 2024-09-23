@@ -33,7 +33,7 @@
             <div style="transform: translate3d(0px, {-scrollPercent * 10}px, 0px);" class="h-full flex flex-col justify-center text-neutral-500 text-center md:text-left">
                 <span class="ms-[0.1em] text-xl md:text-2xl uppercase font-sans">Olá, sou</span>
                 <h1 class="text-7xl md:text-9xl text-nowrap uppercase font-display">Brendo Costa</h1>
-                <span class="ms-[0.1em] text-xl md:text-2xl uppercase font-sans">Fullstack Software Developer</span>
+                <span class="ms-[0.1em] text-xl md:text-2xl uppercase font-sans">Full Stack Software Developer</span>
             </div>
             <div style="transform: translate3d(0px, {-scrollPercent * 70}px, 0px);" class="w-[90%] md:w-[20%]">
                 <img alt="The project logo" src="/images/brendo.jpeg">
@@ -58,11 +58,11 @@
             <ul class="flex flex-col gap-y-8">
                 {#each [
                     {
-                        position: "Desenvolvedor Fullstack",
+                        position: "Desenvolvedor Full Stack",
                         company: "Top Down Consultoria & Projetos S.A.",
                         start_date: "2022/03/28",
                         end_date: "2023/03/28",
-                        description: "Atuei na TopDown como desenvolvedor fullstack em soluções de TI para a área da saúde suplementar em todo território nacional, atendendo demandas por features, correções, otimizações, testes e adequações legais (compliance) em múltiplos sistemas com complexas regras de negócio empregando variadas stacks. Nesse período trabalhei sobretudo com back ends escritos em ASP, C# e PL/SQL em conjunto com o Oracle Database, versões 11g ao 19c. Realizei também testes E2E e integrei sistemas com web services e APIs da Agência Nacional de Saúde Suplementar (ANS), entregando diariamente através de pipelines de integração e entrega contínuas (CI/CD). Também atuei na manutenção e implementação de front ends construídos com Bootstrap, Kendo UI e jQuery. Nossos clientes incluiam Amil, Amil Dental, MedSênior, MetLife, NotreDame Intermédica, Porto Seguro, Seguros Unimed, Unimed Cerrado, Unimed Nacional, Unimed Odonto e Unimed Rio."
+                        description: "Atuei na TopDown como desenvolvedor full stack em soluções de TI para a área da saúde suplementar em todo território nacional, atendendo demandas por features, correções, otimizações, testes e adequações legais (compliance) em múltiplos sistemas com complexas regras de negócio empregando variadas stacks. Nesse período trabalhei sobretudo com back ends escritos em ASP, C# e PL/SQL em conjunto com o Oracle Database, versões 11g ao 19c. Realizei também testes E2E e integrei sistemas com web services e APIs da Agência Nacional de Saúde Suplementar (ANS), entregando diariamente através de pipelines de integração e entrega contínuas (CI/CD). Também atuei na manutenção e implementação de front ends construídos com Bootstrap, Kendo UI e jQuery. Nossos clientes incluíam Amil, Amil Dental, MedSênior, MetLife, NotreDame Intermédica, Porto Seguro, Seguros Unimed, Unimed Cerrado, Unimed Nacional, Unimed Odonto e Unimed Rio."
                     }
                 ] as item}
                     <li>
@@ -98,7 +98,7 @@
                         ]
                     },
                     {
-                        title: "Frontend",
+                        title: "Front End",
                         items: [
                             { name: "Blazor", icon: "icon-[builtin--blazor]" },
                             { name: "Bootstrap", icon: "icon-[devicon-plain--bootstrap]" },
@@ -109,7 +109,7 @@
                         ]
                     },
                     {
-                        title: "Backend",
+                        title: "Back End",
                         items: [
                             { name: ".NET/ASP.NET", icon: "icon-[builtin--dotnet]" },
                             { name: "CMake", icon: "icon-[devicon-plain--cmake]" },
@@ -227,14 +227,14 @@
                         title: "Dodoco Launcher",
                         date: "2023/05/06",
                         tags: ["C#", "C", "C++", ".NET", "Svelte", "TypeScript", "Tailwind"],
-                        text: "Um launcher que porta para o Linux um popular jogo RPG da atualidade. A aplicação permite que o jogo seja instalado, atualizado, configurado e executado em sistemas Linux com facilidade. A infraestrutura de rede e configuração da aplicação foi escrita em C# para o .NET, sua infraestrutura de suporte a execução do jogo foi escrita em C e C++ e por fim seu frontend foi escrito em TypeScript e desenvolvido com o framework Svelte e Tailwind.",
+                        text: "Um launcher que porta para o Linux um popular jogo RPG da atualidade. A aplicação permite que o jogo seja instalado, atualizado, configurado e executado em sistemas Linux com facilidade. A infraestrutura de rede e configuração da aplicação foi escrita em C# para o .NET, sua infraestrutura de suporte a execução do jogo foi escrita em C e C++ e por fim seu front end foi escrito em TypeScript e desenvolvido com o framework Svelte e Tailwind.",
                         github_url: "https://github.com/BrendoCosta/dodoco-launcher",
                     },
                     {
                         title: "WebSockets Chat",
                         date: "2022/05/25",
                         tags: ["JavaScript", "Node.js", "React", "WebSockets", "WireShark"],
-                        text: "Um chat para múltiplos usuários comunicando-se simultaneamente escrito em JavaScript para o Node.js, utilizando a API Web para o protocolo RFC 6455/WebSocket como uma alternativa de menor latência de comunicação em comparação ao HTTP. Desenvolvemos uma interface para o frontend utilizando o framework React. Por fim, através de uma palestra em aula, detalhamos o funcionamento do protocolo a nível de transporte TCP/IP utilizando o WireShark. A aplicação desenvolvida para a disciplina TCC00228 - Redes de Computadores II para Sistemas de Informação - Turma A1 - 2022.1 - ministrada pelo Professor Flavio Luiz Seixas.",
+                        text: "Um chat para múltiplos usuários comunicando-se simultaneamente escrito em JavaScript para o Node.js, utilizando a API Web para o protocolo RFC 6455/WebSocket como uma alternativa de menor latência de comunicação em comparação ao HTTP. Desenvolvemos um front end utilizando o framework React. Por fim, através de uma palestra em aula, detalhamos o funcionamento do protocolo a nível de transporte TCP/IP utilizando o WireShark. A aplicação desenvolvida para a disciplina TCC00228 - Redes de Computadores II para Sistemas de Informação - Turma A1 - 2022.1 - ministrada pelo Professor Flavio Luiz Seixas.",
                         github_url: "https://github.com/BrendoCosta/redesIITrab",
                     },
                     //{
