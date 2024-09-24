@@ -3,15 +3,19 @@
     import Navigation from "$lib/Navigation.svelte";
     import Section from "$lib/Section.svelte";
     import { browser } from "$app/environment";
+    import IntersectionObserver from "svelte-intersection-observer";
+
+    let svg_wrapper_node: HTMLElement | null | undefined = $state(null);
 
     let scrollY: number = $state(0);
-    let scrollPercent: number = $state(0);
+    let elemScrollPos: number = $state(0);
     $effect(() => {
-        if (browser)
+        if (browser && svg_wrapper_node)
         {
-            scrollPercent = (scrollY/document.body.scrollHeight) * 100;
+            elemScrollPos = ((scrollY - (svg_wrapper_node.getBoundingClientRect().top)) / ((svg_wrapper_node.getBoundingClientRect().bottom)) - ((svg_wrapper_node.getBoundingClientRect().top))) / 20;
         }
     });
+
 </script>
 <svelte:window bind:scrollY={scrollY}/>
 <header>
@@ -19,26 +23,29 @@
 </header>
 <main class="overflow-x-hidden w-full">
     <section id="Início" class="bg-zinc-900 relative">
-        <svg class="absolute top-0 left-0 w-screen h-full" viewBox="0 0 200 70" preserveAspectRatio="xMinYMin slice">
-            <foreignObject x="0" y="0" width="100%" height="100%">
-                <div class="flex flex-col overflow-hidden select-none">
-                    <p style="transform: translate3d({-scrollPercent * 10}px, 0px, 0px);" class="font-display text-2xl leading-[0.75em] tracking-widest text-zinc-800/40">Everyone should</p>
-                    <p style="transform: translate3d({scrollPercent * 10}px, 0px, 0px);" class="font-display text-2xl leading-[0.75em] tracking-widest text-zinc-800/40">have their</p>
-                    <p style="transform: translate3d({-scrollPercent * 10}px, 0px, 0px);" class="font-display text-2xl leading-[0.75em] tracking-widest text-zinc-800/40">mind blown</p>
-                    <p style="transform: translate3d({scrollPercent * 10}px, 0px, 0px);" class="font-display text-2xl leading-[0.75em] tracking-widest text-zinc-800/40">once a day</p>
+        <IntersectionObserver element={svg_wrapper_node} let:intersecting>
+            <div class="absolute top-0 left-0 w-screen h-full" bind:this={svg_wrapper_node}>
+                <svg class="w-full h-full" viewBox="0 0 200 70" preserveAspectRatio="xMinYMin slice">
+                    <foreignObject x="0" y="0" width="100%" height="100%">
+                        <div class="flex flex-col overflow-hidden select-none">
+                            {#each ["Everyone should", "have their", "mind blown", "once a day"] as item, index}
+                                <p style="transform: translateX({intersecting ? elemScrollPos * (Math.pow(index, 2) % 2 == 0 ? 1 : -1) : 0}px);" class="font-display text-2xl leading-[0.75em] tracking-widest text-zinc-800/40">{item}</p>
+                            {/each}
+                        </div>
+                    </foreignObject>
+                </svg>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center w-screen h-screen md:h-screen md:gap-x-52">
+                <div style="transform: translateY({intersecting ? -elemScrollPos : 0}px);" class="h-full flex flex-col justify-center text-neutral-500 text-center md:text-left">
+                    <span class="ms-[0.1em] text-xl md:text-2xl uppercase font-sans">Olá, sou</span>
+                    <h1 class="text-7xl md:text-9xl text-nowrap uppercase font-display">Brendo Costa</h1>
+                    <span class="ms-[0.1em] text-xl md:text-2xl uppercase font-sans">Full Stack Software Developer</span>
                 </div>
-            </foreignObject>
-        </svg>
-        <div class="flex flex-col md:flex-row justify-center items-center w-screen h-screen md:h-screen md:gap-x-52">
-            <div style="transform: translate3d(0px, {-scrollPercent * 10}px, 0px);" class="h-full flex flex-col justify-center text-neutral-500 text-center md:text-left">
-                <span class="ms-[0.1em] text-xl md:text-2xl uppercase font-sans">Olá, sou</span>
-                <h1 class="text-7xl md:text-9xl text-nowrap uppercase font-display">Brendo Costa</h1>
-                <span class="ms-[0.1em] text-xl md:text-2xl uppercase font-sans">Full Stack Software Developer</span>
+                <div style="transform: translateY({intersecting ? -elemScrollPos * 7 : 0}px);" class="w-[90%] md:w-[20%]">
+                    <img alt="The project logo" src="/images/brendo.jpeg">
+                </div>
             </div>
-            <div style="transform: translate3d(0px, {-scrollPercent * 70}px, 0px);" class="w-[90%] md:w-[20%]">
-                <img alt="The project logo" src="/images/brendo.jpeg">
-            </div>
-        </div>
+        </IntersectionObserver>
     </section>
     <Section index={0} title="Sobre mim">
         <div class="markdown">

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount, type Snippet } from "svelte";
+    import { type Snippet } from "svelte";
     import { slide } from "svelte/transition";
     import { browser } from "$app/environment";
     import IntersectionObserver from "svelte-intersection-observer";
@@ -16,29 +16,35 @@
 
     let section_title_node: HTMLElement | null | undefined = $state(null);
     let section_bar_node: HTMLElement | null | undefined = $state(null);
-    let text_node: HTMLParagraphElement | null | undefined = $state(null);
+    let svg_wrapper_node: HTMLElement | null | undefined = $state(null);
 
     let scrollY: number = $state(1);
-    let elemScrollPos: number = $state(1);
-    
-    onMount(() => {
-        if (browser && text_node)
+    let elemScrollPos: number = $state(0);
+
+    $effect(() => {
+
+        if (browser && svg_wrapper_node)
         {
-            elemScrollPos = scrollY + text_node.getBoundingClientRect().top;
+            elemScrollPos = -((scrollY - (svg_wrapper_node.getBoundingClientRect().top)) / ((svg_wrapper_node.getBoundingClientRect().bottom)) - ((svg_wrapper_node.getBoundingClientRect().top))) / 20;
         }
-    });
+
+    })
 
 </script>
 <svelte:window bind:scrollY={scrollY}/>
 <section class="{ reverse ? "bg-zinc-900" : "bg-neutral-500" } flex flex-col md:min-h-screen">
     <div id="{title}" class="{ reverse ? "bg-neutral-500" : "bg-zinc-900" } relative overflow-hidden h-[50vh] md:h-screen flex flex-col justify-center items-center">
-        <svg class="absolute top-0 left-0 w-screen h-full" viewBox="0 0 200 70" preserveAspectRatio="xMinYMin slice">
-            <foreignObject x="0" y="0" width="100%" height="100%">
-                <div class="flex flex-col h-full justify-center">
-                    <p bind:this={text_node} style="transform: translateX({(elemScrollPos - scrollY)/50}px);" class="text-5xl text-nowrap font-display tracking-widest { reverse ? "text-neutral-600/40" : "text-zinc-800/40" } select-none">{title}</p>
-                </div>
-            </foreignObject>
-        </svg>
+        <IntersectionObserver element={svg_wrapper_node} let:intersecting>
+            <div class="absolute top-0 left-0 w-screen h-full" bind:this={svg_wrapper_node}>
+                <svg class="w-full h-full" viewBox="0 0 200 70" preserveAspectRatio="xMinYMin slice">
+                    <foreignObject x="0" y="0" width="100%" height="100%">
+                        <div class="flex flex-col h-full justify-center">
+                            <p style="transform: translateX({intersecting ? elemScrollPos : 0}px);" class="text-5xl text-nowrap font-display tracking-widest { reverse ? "text-neutral-600/40" : "text-zinc-800/40" } select-none">{title}</p>
+                        </div>
+                    </foreignObject>
+                </svg>
+            </div>
+        </IntersectionObserver>
         <IntersectionObserver element={section_title_node} let:intersecting>
             <div bind:this={section_title_node}>
                 {#if intersecting}
