@@ -162,7 +162,7 @@
             <h3>Bacharel em Sistemas de Informação</h3>
             <h4>Universidade Federal Fluminense <span class="select-none">|</span> 2020 - 2024</h4>
             <p>
-                Bacharel em Sistemas de Informação pelo Instituto de Computação da UFF. Meu trabalho de conclusão de curso, intitulado "Open Innovation: Estudo de caso soba integração estratégica do software de código aberto e modelos de negócio de empresas de TI", foi desenvolvido sob a orientação do Prof. Dr. Flavio Luiz Seixas e abordou o software de código aberto de sua concepção a sua posição estratégica no mercado de TI atual. Você pode lê-lo através <a href="/documents/Open Innovation: Estudo de caso sobre a integração estratégica do software de código aberto e modelos de negócio de empresas de TI.pdf" target="_blank">deste link</a>.
+                Bacharel em Sistemas de Informação pelo Instituto de Computação da UFF. Meu trabalho de conclusão de curso, intitulado "Open Innovation: Estudo de caso sobre integração estratégica do software de código aberto e modelos de negócio de empresas de TI", foi desenvolvido sob a orientação do Prof. Dr. Flavio Luiz Seixas e abordou o software de código aberto de sua concepção a sua posição estratégica no mercado de TI atual. Você pode lê-lo através <a href="/documents/Open Innovation: Estudo de caso sobre a integração estratégica do software de código aberto e modelos de negócio de empresas de TI.pdf" target="_blank">deste link</a>.
             </p>
         </div>
     </Section>
